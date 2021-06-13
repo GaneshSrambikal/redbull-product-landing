@@ -228,9 +228,10 @@ footer p a{
         justify-content: flex-end;
     }
     .product{
-        /* flex-direction: column-reverse; */
+        flex-direction: column-reverse;
         /* max-width: 200px; */
         justify-content: flex-end;
+        margin-bottom: 20px;
     }
     .product .product-img{
         max-width: 120px;
