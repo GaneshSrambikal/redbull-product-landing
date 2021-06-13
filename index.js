@@ -1,10 +1,10 @@
 // Get the container element
 var navListContainer = document.getElementById("nav-lists");
 
-// Get all buttons with class="btn" inside the container
+// Get all links with class="nav-link" inside the container
 var navlinks = navListContainer.getElementsByClassName("nav-link");
 
-// Loop through the buttons and add the active class to the current/clicked button
+// Loop through the links and add the active class to the current/clicked links
 for (var i = 0; i < navlinks.length; i++) {
   navlinks[i].addEventListener("click", function() {
     var current = document.getElementsByClassName("active");

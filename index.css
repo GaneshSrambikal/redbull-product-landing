@@ -4,16 +4,19 @@
     margin: 0;
     box-sizing: border-box;
     user-select: none;
-}
-body{
-    /* background: lightgreen; */
-    font-family: 'Montserrat';
-    transition: 0.5s ease-in-out;
     scroll-behavior: smooth;
 }
+
+body{
+    font-family: 'Montserrat';
+    transition: 0.5s ease-in-out;
+    
+}
+/* active links */
 .active{
     border-bottom: 2px solid white;
 }
+/* header which is also navbar fixed at top */
 #header{
     position: fixed;
     top:0;
@@ -24,15 +27,16 @@ body{
     justify-content: space-between;
     padding: 10px 50px;
     transition: 0.5s ease-in-out;
+    z-index: 3;
     
 }
 .top-fixed{
-    background: rgba(0, 0, 0, 0.10);
+    /* background: rgba(0, 0, 0, 0.10); */
+    background: linear-gradient(to right,rgba(0,0,0,0), rgba(0,0,0,0.10));
 }
 
 .logo{
     width: 200px;
-    /* height:150px; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,10 +46,8 @@ body{
     width: 100%;
     object-fit: cover;
 }
-
 ul{
     list-style: none;
-    
 }
 ul li a{
     text-decoration: none;
@@ -53,22 +55,21 @@ ul li a{
     text-transform: uppercase;
     margin-left: 10px;
     color:white;
+    outline: none;
     transition: 0.5s ease-in-out;
 }
 .classic-link{
     background-color: rgba(0, 90, 174,0.20);
-    border-radius: 2px;
-    padding: 5px;
 }
 .yellow-link{
     background:rgba(240, 225, 10, 0.419);
-    border-radius: 2px;
-    padding: 5px;
 }
 .orange-link{
     background:rgba(235, 135, 41,0.50);   
-    padding: 5px;
+}
+.classic-link, .yellow-link, .orange-link{
     border-radius: 2px;
+    padding: 5px;
 }
 #nav-bar{
     display: flex;
@@ -82,39 +83,28 @@ nav > ul{
     justify-content: space-evenly;
 }
 section{
-    background: cornflowerblue;
     height: 99vh;
     width: 100%;
     padding: 20px;
     transition: 0.5s ease-in-out;
 }
 #section1{
-    /* background: #00162b; */
     background-image: radial-gradient(#005aae, #004687, #00162b);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: 0.5s ease-in-out;
 }
 #section2{
     background: radial-gradient(#eeda43, #cabe15, #959702);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 #section3{
-    /* background: #e17a1b; */
     background-image: radial-gradient(#f0a764, #eb8729, #e17a1b);
+}
+#section1, #section2, #section3{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-/* section product */
+/* all products */
 .product{
-    /* padding: 50px; */
     display: flex;
     max-width: 500px;
     flex-direction: column;
@@ -133,27 +123,29 @@ section{
     letter-spacing: 5px;
 }
 .product .product-img{
-    /* width: 200px; */
+    position: relative;
     max-width: 200px;
     height: auto;
     display: flex;
     flex-direction: row;
     transition: 0.5s ease-in-out;
+    animation-name: example;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+@keyframes example{
+    0% {top:0px}
+    25%{top:5px}
+    50% {top:10px}
+    75% {top:5px}
+    100% {top:0px}
 }
 .product .product-img img{
     width: 100%;
     height:auto;
     object-fit: cover;
     transition: 0.5s ease-in-out;
-}
-#video{
-    /* margin-top: 50px; */
-    display: flex;
-    justify-content: center;
-}
-#video > iframe{
-    max-width: 560px;
-    width:100%;
 }
 /* subcribe */
 #subscribe{
@@ -187,9 +179,7 @@ section{
     padding: 15px;
     font-size: 18px;
     font-family: 'Montserrat';
-    /* font-weight: 200; */
     margin: 5px;
-    
 }
 #subscribe form input[type='submit']{
     border: none;
@@ -239,7 +229,6 @@ footer p a{
     }
     .product{
         flex-direction: column-reverse;
-        /* max-width: 200px; */
         justify-content: flex-end;
         margin-bottom: 50px;
     }
@@ -247,7 +236,6 @@ footer p a{
         max-width: 120px;
     }
     .product-name{
-        /* margin-top: 5%; */
         padding: 5px;
         margin-bottom: 5px;
         text-transform: uppercase;
@@ -261,8 +249,7 @@ footer p a{
         padding: 5px;
         margin-bottom: 5px;
         text-transform: uppercase;
-        font-size: 1.4em;
-        
+        font-size: 1.4em; 
     }
     #subscribe h2{
         font-weight: 400;
@@ -284,17 +271,13 @@ footer p a{
         width: 100%;
         padding: 10px;
         font-size: 14px;
-        font-family: 'Montserrat';
-        /* font-weight: 200; */
-        margin: 5px;
-        
+        margin: 5px;  
     }
     #subscribe form input[type='submit']{
         border: none;
         padding: 5px;
         font-size: 14px;
         padding: 15px;
-        font-family: 'Montserrat';
         width: 100%;
         background: #004687 ;
         color: white;
@@ -307,22 +290,9 @@ footer p a{
         color: #004687 ;
         border: 1px solid #004687 ;
     }
-    .classic-link{
+    .classic-link, .yellow-link, .orange-link{
         border-radius: 50px;
         padding: 10px;
         font-size: 16px;
-        
-    }
-    .yellow-link{
-        font-size: 16px;
-        padding: 10px;
-        border-radius: 50px;
-        
-    }
-    .orange-link{  
-        padding: 10px;
-        font-size: 16px; 
-        border-radius: 50px;
-         
     }
 }
