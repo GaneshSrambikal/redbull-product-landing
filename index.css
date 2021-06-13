@@ -231,7 +231,7 @@ footer p a{
         flex-direction: column-reverse;
         /* max-width: 200px; */
         justify-content: flex-end;
-        margin-bottom: 20px;
+        margin-bottom: 50px;
     }
     .product .product-img{
         max-width: 120px;
